@@ -1,11 +1,8 @@
-﻿/* Common app functionality */
-
-var app = (function () {
-    "use strict";
+﻿var app = (function () {
+    'use strict';
 
     var app = {};
 
-    // Common initialization function (to be called from each page)
     app.initialize = function () {
         $('body').append(
             '<div id="notification-message">' +
@@ -20,8 +17,6 @@ var app = (function () {
             $('#notification-message').hide();
         });
 
-
-        // After initialization, expose a common notification function
         app.showNotification = function (header, text) {
             $('#notification-message-header').text(header);
             $('#notification-message-body').text(text);

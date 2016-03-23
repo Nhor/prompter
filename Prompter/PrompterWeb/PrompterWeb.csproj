@@ -79,9 +79,9 @@
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="AddIn\App.css" />
     <Content Include="AddIn\App.js" />
-    <Content Include="AddIn\Home\Home.css" />
-    <Content Include="AddIn\Home\Home.html" />
-    <Content Include="AddIn\Home\Home.js" />
+    <Content Include="AddIn\Prompter\Prompter.css" />
+    <Content Include="AddIn\Prompter\Prompter.html" />
+    <Content Include="AddIn\Prompter\Prompter.js" />
     <Content Include="Content\Office.css" />
     <Content Include="Images\Close.png" />
     <Content Include="Scripts\jquery-1.9.1.js" />

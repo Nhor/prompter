@@ -11,7 +11,7 @@
     <Host Name="Presentation" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="~remoteAppUrl/AddIn/Home/Home.html" />
+    <SourceLocation DefaultValue="~remoteAppUrl/AddIn/Prompter/Prompter.html" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
