@@ -67,6 +67,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddIn\libs\SlideManager.js" />
     <Content Include="AddIn\libs\TextToSpeech.js" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
@@ -323,6 +324,7 @@
     <Content Include="Scripts\Office\metadata\features.xml" />
     <Content Include="Scripts\Office\MicrosoftAjax.js" />
     <Content Include="Scripts\responsiveVoice-1.4.5.min.js" />
+    <Content Include="Scripts\when-3.7.7.min.js" />
     <Content Include="Scripts\_officeintellisense.js" />
     <Content Include="Web.config" />
   </ItemGroup>
