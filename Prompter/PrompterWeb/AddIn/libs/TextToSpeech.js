@@ -24,7 +24,7 @@
 
     TextToSpeech.prototype.speak = function (text) {
         this.stop();
-        return responsiveVoice.speak(text);
+        return responsiveVoice.speak(text.toString());
     };
 
     TextToSpeech.prototype.stop = function () {
