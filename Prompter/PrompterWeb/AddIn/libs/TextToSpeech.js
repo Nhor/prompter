@@ -7,6 +7,9 @@
     var TextToSpeech = function () {
         this.languages = _
             .chain(responsiveVoice.getVoices())
+            .filter(function (obj) {
+                return !_.startsWith(obj.name, 'Fallback');
+            })
             .map(function (obj) {
                 return obj.name;
             })
