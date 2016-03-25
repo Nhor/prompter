@@ -1,1 +1,57 @@
-﻿
+﻿.title {
+    float: left;
+}
+
+.on-off {
+    float: right;
+    width: 70px;
+    height: 40px;
+    background: #676767;
+    margin: 10px 10px;
+    border-radius: 0px;
+    position: relative;
+    cursor: default;
+}
+
+.on-off:before {
+    content: 'On';
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    height: 2px;
+    color: #8cc600;
+    font-size: 16px;
+}
+
+.on-off:after {
+    content: 'Off';
+    position: absolute;
+    top: 9px;
+	left: 41px;
+	height: 2px;
+	color: #c6c6c6;
+	font-size: 16px;
+}
+
+.on-off label {
+	display: block;
+	width: 30px;
+	height: 30px;
+	border-radius: 0px;
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	z-index: 1;
+	left: 5px;
+	background: #c6c6c6;
+}
+
+.on-off input[type=checkbox]:checked + label {
+	left: 35px;
+	background: #8cc600;
+}
+
+.on-off input[type=checkbox] {
+    visibility: hidden;
+}
