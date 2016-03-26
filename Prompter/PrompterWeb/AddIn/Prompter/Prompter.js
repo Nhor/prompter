@@ -19,6 +19,14 @@
                     return language === textToSpeech.languageFallback;
                 })
             );
+
+            var slideManager = new SlideManager();
+            $('#on-off-switch:checkbox').change(function () {
+                if (!this.checked) {
+                    return slideManager.stopWatching();
+                }
+                return slideManager.watch();
+            });
         });
     };
 })();
