@@ -63,8 +63,6 @@
                     });
                 }
                 return when.resolve();
-            }).then(function () {
-                return loop();
             });
         }, 500);
     };
