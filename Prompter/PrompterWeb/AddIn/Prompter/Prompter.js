@@ -27,6 +27,17 @@
     };
 
     /**
+   * Initialize the #mode-pick-switch <input> item to toggle
+   * ``app.globals.enabledInEditMode`` on checkbox state change.
+   */
+    var initializeModePickSwitch = function () {
+        app.globals.enabledInEditMode = true;
+        $('#mode-pick-switch:checkbox').change(function () {
+            app.globals.enabledInEditMode = this.checked;
+        });
+    };
+
+    /**
      * Initialize the #on-off-switch <input> item to ``SlideManager.watch`` or
      * ``SlideManager.stopWatching`` the slideshow according to the checkbox state.
      */
@@ -43,6 +54,7 @@
         $(document).ready(function () {
             app.initialize();
             initializeLanguageSelection();
+            initializeModePickSwitch();
             initializeOnOffSwitch();
         });
     };

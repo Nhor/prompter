@@ -3,6 +3,8 @@
 
     var app = {};
 
+    app.globals = {};
+
     app.initialize = function () {
         $('body').append(
             '<div id="notification-message">' +
