@@ -42,7 +42,7 @@
      * syntheizer will tag the slides.
      */
     var initializeTaggingStyleChoice = function () {
-        app.globals.taggingStyle = 'number';
+        app.globals.taggingStyle = 'title';
         $('input[name="tagging-style"]').change(function () {
             app.globals.taggingStyle = $('input[name="tagging-style"]:checked').val();
         });
