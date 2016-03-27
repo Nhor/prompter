@@ -38,8 +38,8 @@
     };
 
     /**
-     * Initialize the #tagging-style <input> items to choose the way the
-     * speech syntheizer will tag the slides.
+     * Initialize the tagging-style <input> items to choose the way the speech
+     * syntheizer will tag the slides.
      */
     var initializeTaggingStyleChoice = function () {
         app.globals.taggingStyle = 'number';
