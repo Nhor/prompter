@@ -62,6 +62,21 @@
     };
 
     Office.initialize = function (reason) {
+
+        slideManager.onChange = function (oldSlide, newSlide) {
+            var text;
+
+            if (app.globals.taggingStyle === 'title') {
+                text = newSlide.title;
+            } else if (app.globals.taggingStyle === 'number') {
+                text = newSlide.index;
+            } else {
+                text = 'coming soon';
+            }
+
+            textToSpeech.speak(text);
+        };
+
         $(document).ready(function () {
             app.initialize();
             initializeLanguageSelection();
