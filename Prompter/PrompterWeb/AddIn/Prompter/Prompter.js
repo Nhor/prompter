@@ -27,9 +27,9 @@
     };
 
     /**
-   * Initialize the #mode-pick-switch <input> item to toggle
-   * ``app.globals.enabledInEditMode`` on checkbox state change.
-   */
+     * Initialize the #mode-pick-switch <input> item to toggle
+     * ``app.globals.enabledInEditMode`` on checkbox state change.
+     */
     var initializeModePickSwitch = function () {
         app.globals.enabledInEditMode = true;
         $('#mode-pick-switch:checkbox').change(function () {
