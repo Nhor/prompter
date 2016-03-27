@@ -1,5 +1,13 @@
-﻿.title {
+﻿body {
+    cursor: default;
+}
+
+.title {
     float: left;
+}
+
+.tagging-style-table td {
+    padding-right: 8px;
 }
 
 .on-off {
