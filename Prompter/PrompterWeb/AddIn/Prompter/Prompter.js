@@ -38,6 +38,17 @@
     };
 
     /**
+     * Initialize the #tagging-style <input> items to choose the way the
+     * speech syntheizer will tag the slides.
+     */
+    var initializeTaggingStyleChoice = function () {
+        app.globals.taggingStyle = 'number';
+        $('input[name="tagging-style"]').change(function () {
+            app.globals.taggingStyle = $('input[name="tagging-style"]:checked').val();
+        });
+    };
+
+    /**
      * Initialize the #on-off-switch <input> item to ``SlideManager.watch`` or
      * ``SlideManager.stopWatching`` the slideshow according to the checkbox state.
      */
@@ -55,6 +66,7 @@
             app.initialize();
             initializeLanguageSelection();
             initializeModePickSwitch();
+            initializeTaggingStyleChoice();
             initializeOnOffSwitch();
         });
     };
