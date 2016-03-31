@@ -24,6 +24,7 @@
      */
     app.globals.turnOff = function () {
         app.globals.on = false;
+        textToSpeech.stop();
         return slideManager.stopWatching();
     };
 

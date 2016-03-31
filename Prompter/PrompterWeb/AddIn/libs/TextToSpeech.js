@@ -37,7 +37,6 @@
      * @param {object} text - Text to be spoken. Preferably a string.
      */
     TextToSpeech.prototype.speak = function (text) {
-        this.stop();
         return responsiveVoice.speak(text.toString());
     };
 
