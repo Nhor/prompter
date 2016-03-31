@@ -5,6 +5,32 @@
     var slideManager = new SlideManager();
 
     /**
+     * Turn the Prompter on by setting global variable ``on`` to ``true`` and
+     * calling the ``SlideManager.watch`` function.
+     */
+    app.globals.turnOn = function () {
+        app.globals.on = true;
+        slideManager.watch();
+    };
+
+    /**
+     * Turn the Prompter off by setting global variable ``on`` to ``false`` and
+     * calling the ``SlideManager.stopWatching`` function.
+     */
+    app.globals.turnOff = function () {
+        app.globals.on = false;
+        slideManager.stopWatching();
+    };
+
+    /**
+     * Restart the Prompter by calling global funcs ``turnOff`` and ``turnOn``.
+     */
+    app.globals.restart = function () {
+        app.globals.turnOff();
+        app.globals.turnOn();
+    };
+
+    /**
      * Initialize the .language-selection <select> items to display available
      * languages and change the TTS language each time the <option> changes.
      */
@@ -49,15 +75,15 @@
     };
 
     /**
-     * Initialize the #on-off-switch <input> item to ``SlideManager.watch`` or
-     * ``SlideManager.stopWatching`` the slideshow according to the checkbox state.
+     * Initialize the #on-off-switch <input> item to watch or stop watching the
+     * slideshow according to the checkbox state.
      */
     var initializeOnOffSwitch = function () {
         $('#on-off-switch:checkbox').change(function () {
             if (!this.checked) {
-                return slideManager.stopWatching();
+                return app.globals.turnOff();
             }
-            return slideManager.watch();
+            return app.globals.turnOn();
         });
     };
 
