@@ -89,6 +89,13 @@
 
     Office.initialize = function (reason) {
 
+        Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, function (res) {
+            if (!app.globals.on) {
+                return;
+            }
+            return app.globals.restart();
+        });
+
         slideManager.onChange = function (oldSlide, newSlide) {
             var text;
 
