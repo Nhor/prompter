@@ -5,6 +5,13 @@
 
     app.globals = {};
 
+    var resizeFooter = function () {
+        $('#content-footer').css(
+            'top',
+            $('#content-header').height() + $('#content-main').height()
+        );
+    };
+
     app.initialize = function () {
         $('body').append(
             '<div id="notification-message">' +
@@ -17,6 +24,11 @@
 
         $('#notification-message-close').click(function () {
             $('#notification-message').hide();
+        });
+
+        resizeFooter();
+        $(window).resize(function () {
+            resizeFooter();
         });
 
         app.showNotification = function (header, text) {

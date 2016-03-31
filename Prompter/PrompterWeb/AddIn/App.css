@@ -17,8 +17,18 @@
     top: 80px; /* Same value as #content-header's height */
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 117px; /* Leave space for footer */
     overflow: auto; /* Enable scrollbars within main content section */
+}
+
+#content-footer {
+    background: #f1f1f1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
 }
 
 .padding {
