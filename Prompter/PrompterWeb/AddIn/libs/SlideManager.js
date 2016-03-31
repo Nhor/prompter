@@ -51,18 +51,12 @@
                         // to be passed to the ``onChange`` method
 
         this.watchFunc = setInterval(function () {
-            return that.getMode().then(function (mode) {
-                if (mode === 'edit' && !app.globals.enabledInEditMode) {
-                    return when.resolve();
+            return that.getCurrent().then(function (slide) {
+                if (slide.id !== lastRegisteredSlide.id) {
+                    oldSlide = _.clone(lastRegisteredSlide);
+                    lastRegisteredSlide = slide;
+                    return that.onChange(oldSlide, slide);
                 }
-                return that.getCurrent().then(function (slide) {
-                    if (slide.id !== lastRegisteredSlide.id) {
-                        oldSlide = _.clone(lastRegisteredSlide);
-                        lastRegisteredSlide = slide;
-                        return that.onChange(oldSlide, slide);
-                    }
-                    return when.resolve();
-                });
                 return when.resolve();
             });
         }, 500);

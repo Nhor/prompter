@@ -10,7 +10,12 @@
      */
     app.globals.turnOn = function () {
         app.globals.on = true;
-        slideManager.watch();
+        return slideManager.getMode().then(function (mode) {
+            if (mode === 'edit' && !app.globals.enabledInEditMode) {
+                return slideManager.stopWatching();
+            }
+            return slideManager.watch();
+        });
     };
 
     /**
@@ -19,7 +24,7 @@
      */
     app.globals.turnOff = function () {
         app.globals.on = false;
-        slideManager.stopWatching();
+        return slideManager.stopWatching();
     };
 
     /**
@@ -27,7 +32,7 @@
      */
     app.globals.restart = function () {
         app.globals.turnOff();
-        app.globals.turnOn();
+        return app.globals.turnOn();
     };
 
     /**
@@ -60,6 +65,7 @@
         app.globals.enabledInEditMode = true;
         $('#mode-pick-switch:checkbox').change(function () {
             app.globals.enabledInEditMode = this.checked;
+            app.globals.restart();
         });
     };
 
