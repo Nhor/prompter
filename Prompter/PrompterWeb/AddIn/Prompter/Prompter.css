@@ -10,6 +10,14 @@
     padding-right: 8px;
 }
 
+.custom-tags {
+    padding-top: 0;
+}
+
+#refresh-slides-count {
+    margin-bottom: 15px;
+}
+
 .on-off {
     float: right;
     width: 70px;

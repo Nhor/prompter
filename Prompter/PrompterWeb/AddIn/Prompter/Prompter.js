@@ -125,11 +125,23 @@
                 '<thead>' +
                 '</thead>' +
                 '<tbody>' +
+                '<tr>' +
+                '<td>' +
+                '</td>' +
+                '<td>' +
+                '<input type="button" id="refresh-slides-count" value="Refresh slides count"></input>' +
+                '</td>' +
+                '</tr>' +
                 elements.join('\n') +
                 '</tbody>' +
                 '</table>' +
                 '</div>'
             );
+
+            $('#refresh-slides-count').click(function () {
+                terminateCustomTags();
+                initializeCustomTags();
+            });
 
             $('input[name="custom-tags"]').change(function () {
                 var index = _.last(_.split($(this).attr('id'), '-'));
