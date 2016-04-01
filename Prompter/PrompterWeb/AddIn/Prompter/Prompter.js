@@ -78,7 +78,66 @@
         app.globals.taggingStyle = 'title';
         $('input[name="tagging-style"]').change(function () {
             app.globals.taggingStyle = $('input[name="tagging-style"]:checked').val();
+            if (app.globals.taggingStyle === 'custom') {
+                initializeCustomTags();
+            } else {
+                terminateCustomTags();
+            }
         });
+    };
+
+    /**
+     * Initialize .custom-tags <div> element to show the custom tags and allow
+     * the user to decide what the specific slides tags will be.
+     */
+    var initializeCustomTags = function () {
+        app.globals.slidesCount = app.globals.slidesCount || 0;
+        app.globals.customTags = app.globals.customTags || {};
+
+        slideManager.getLastIndex().then(function (index) {
+            if (index !== app.globals.slidesCount) {
+                app.globals.slidesCount = index;
+            }
+
+            var elements = _
+                .chain(_.range(app.globals.slidesCount))
+                .map(function (index) {
+                    return index + 1;
+                })
+                .map(function (index) {
+                    return (
+                        '<tr>' +
+                        '<td>' +
+                        '<label for="custom-tag-' + index + '">' + index + '</label>' +
+                        '</td>' +
+                        '<td>' +
+                        '<input type="text" id="custom-tag-' + index + '" value="' + (app.globals.customTags[index] || '') + '" name="custom-tags"></input>' +
+                        '</td>' +
+                        '</tr>'
+                    );
+                });
+
+            terminateCustomTags();
+
+            $('#content-main').append(
+                '<div class="padding custom-tags">' +
+                '<table>' +
+                '<thead>' +
+                '</thead>' +
+                '<tbody>' +
+                elements.join('\n') +
+                '</tbody>' +
+                '</table>' +
+                '</div>'
+            );
+        });
+    };
+
+    /**
+     * Delete the .custom-tags <div> element to hide the custom tags.
+     */
+    var terminateCustomTags = function () {
+        $('.custom-tags').remove();
     };
 
     /**
