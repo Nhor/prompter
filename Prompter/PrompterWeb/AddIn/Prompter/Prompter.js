@@ -175,7 +175,7 @@
             } else if (app.globals.taggingStyle === 'number') {
                 text = newSlide.index;
             } else {
-                text = 'coming soon';
+                text = app.globals.customTags[newSlide.index];
             }
 
             textToSpeech.speak(text);
