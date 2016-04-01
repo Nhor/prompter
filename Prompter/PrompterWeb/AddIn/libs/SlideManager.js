@@ -41,6 +41,52 @@
     };
 
     /**
+     * Go to specified slide.
+     * @param {number|string} index - Index of the slide.
+     *                                Can be a ``number`` or ``Office.Index``.
+     */
+    SlideManager.prototype.goTo = function (index) {
+        var goToType;
+
+        return when.promise(function (resolve, reject) {
+            if (typeof index === 'number') {
+                goToType = Office.GoToType.Index;
+            } else {
+                goToType = Office.GoToType.Slide;
+            }
+
+            Office.context.document.goToByIdAsync(index, goToType, function (res) {
+                if (res.status === 'failed') {
+                    return reject(new Error(res.error.message));
+                }
+                return resolve();
+            });
+        });
+    };
+
+    /**
+     * Get index of the last slide in presentation.
+     * @return {number} Index of the last slide in presentation.
+     */
+    SlideManager.prototype.getLastIndex = function () {
+        var that = this;
+        var currentSlideIndex;
+        var lastSlideIndex;
+
+        return this.getCurrent().then(function (slide) {
+            currentSlideIndex = slide.index;
+            return that.goTo(Office.Index.Last);
+        }).then(function () {
+            return that.getCurrent();
+        }).then(function (slide) {
+            lastSlideIndex = slide.index;
+            return that.goTo(currentSlideIndex);
+        }).then(function () {
+            return lastSlideIndex;
+        });
+    };
+
+    /**
      * Watch for the slide change.
      * This method will call ``onChange`` when the current slide changes.
      */
