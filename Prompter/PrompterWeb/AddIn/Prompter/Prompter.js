@@ -132,7 +132,7 @@
             );
 
             $('input[name="custom-tags"]').change(function () {
-                var index = _.last(_.split(id, '-'));
+                var index = _.last(_.split($(this).attr('id'), '-'));
                 app.globals.customTags[index] = $(this).val();
             });
         });
