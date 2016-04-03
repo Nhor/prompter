@@ -3,10 +3,10 @@
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="TaskPaneApp">
   <Id>b96167ba-3308-4061-8115-ba7a30d51b0b</Id>
   <Version>1.0.0.0</Version>
-  <ProviderName>[Provider name]</ProviderName>
+  <ProviderName>Mieczkowski Norbert</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Prompter" />
-  <Description DefaultValue="Prompter"/>
+  <Description DefaultValue="Microsoft PowerPoint Add-In for people with visual dysfunction."/>
   <Hosts>
     <Host Name="Presentation" />
   </Hosts>
