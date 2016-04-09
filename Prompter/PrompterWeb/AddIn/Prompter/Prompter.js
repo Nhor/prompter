@@ -170,6 +170,40 @@
         });
     };
 
+    /**
+     * Initialize keydown and keyup event listeners.
+     */
+    var initializeKeyboardEvents = function () {
+        window.addEventListener('keydown', multipleKeysEventListener, false);
+        window.addEventListener('keyup', multipleKeysEventListener, false);
+    };
+
+    /**
+     * EventListener function for detecting multiple keyboard buttons pressed.
+     * @param {object} event - Event object.
+     */
+    var multipleKeysEventListener = function (event) {
+        app.globals.keysMap = app.globals.keysMap || {};
+        app.globals.keysMap[event.keyCode] = event.type == 'keydown';
+
+        if (ctrlShiftAltPPressed()) {
+            $('#on-off-switch:checkbox').click();
+        }
+    };
+
+    /**
+     * Determine if Ctrl+Shift+Alt+P buttons are pressed.
+     */
+    var ctrlShiftAltPPressed = function () {
+        return (
+            _.size(_.pickBy(app.globals.keysMap)) === 4 &&
+            app.globals.keysMap[16] &&
+            app.globals.keysMap[17] &&
+            app.globals.keysMap[18] &&
+            app.globals.keysMap[80]
+        );
+    };
+
     Office.initialize = function (reason) {
 
         Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, function (res) {
@@ -199,6 +233,7 @@
             initializeModePickSwitch();
             initializeTaggingStyleChoice();
             initializeOnOffSwitch();
+            initializeKeyboardEvents();
         });
     };
 })();
