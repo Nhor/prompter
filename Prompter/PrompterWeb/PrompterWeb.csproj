@@ -69,6 +69,8 @@
   <ItemGroup>
     <Content Include="AddIn\libs\SlideManager.js" />
     <Content Include="AddIn\libs\TextToSpeech.js" />
+    <Content Include="Images\icon_32x32.png" />
+    <Content Include="Images\icon_64x64.png" />
     <Content Include="packages.config" />
     <Content Include="Scripts\when.min.js.map" />
     <None Include="Web.Debug.config">
