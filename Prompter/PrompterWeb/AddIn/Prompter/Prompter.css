@@ -2,8 +2,21 @@
     cursor: default;
 }
 
-.title {
+.header {
     float: left;
+}
+
+.title {
+    float: right;
+}
+
+.logo {
+    float: left;
+    width: 50px;
+    height: 50px;
+    background-size: 50px 50px;
+    background-image: url('../../Images/icon_64x64.png');
+    margin-right: 13px;
 }
 
 .tagging-style-table td {
