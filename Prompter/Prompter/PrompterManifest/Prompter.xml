@@ -9,7 +9,7 @@
   <Description DefaultValue="Microsoft PowerPoint Add-In for people with visual dysfunction."/>
   <IconUrl DefaultValue="~remoteAppUrl/Images/icon_32x32.png" />
   <HighResolutionIconUrl DefaultValue="~remoteAppUrl/Images/icon_64x64.png" />
-  <SupportUrl DefaultValue="http://prompter.stanzas.co/help" />
+  <SupportUrl DefaultValue="https://prompter.stanzas.co/help" />
   <Hosts>
     <Host Name="Presentation" />
   </Hosts>
