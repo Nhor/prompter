@@ -206,6 +206,14 @@
 
     Office.initialize = function (reason) {
 
+        if (!app.globals.browserIsSupported) {
+            $('body').append(
+                '<div id="overlay">' +
+                    'Sorry, your Microsoft Office version is not supported' +
+                '</div>'
+            );
+        }
+
         Office.context.document.addHandlerAsync(Office.EventType.ActiveViewChanged, function (res) {
             if (!app.globals.on) {
                 return;

@@ -84,3 +84,16 @@
 .on-off input[type=checkbox] {
     visibility: hidden;
 }
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(230, 230, 230, 0.8);
+    z-index: 10000;
+    color: #bf2e2e;
+    font-size: 30px;
+    text-align: center;
+}
