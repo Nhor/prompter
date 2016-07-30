@@ -6,7 +6,7 @@
   <ProviderName>Mieczkowski Norbert</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Prompter" />
-  <Description DefaultValue="Reading slide titles, numbers or custom tags, designed especially for visually despaired." />
+  <Description DefaultValue="Reading slide titles, numbers or custom tags, designed especially for visually impaired." />
   <IconUrl DefaultValue="~remoteAppUrl/Images/icon_32x32.png" />
   <HighResolutionIconUrl DefaultValue="~remoteAppUrl/Images/icon_64x64.png" />
   <SupportUrl DefaultValue="https://prompter.stanzas.co/help" />
